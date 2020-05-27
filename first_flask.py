@@ -6,9 +6,10 @@ app = Flask(__name__)
 def index():
     return "Hello, World!"
 
-@app.route("/gabriel")
-def gabriel():
-    return "Hello, Gabriel!"
+@app.route("/<string:name>")
+def hello(name):
+    name = name.capitalize()
+    return ("Hello, %s!"  % name)
 
 
 if __name__ == '__main__':
